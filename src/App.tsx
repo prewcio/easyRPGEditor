@@ -194,6 +194,7 @@ function App() {
           </form>
         </div>
       }
+      <footer>Project made for fun by <a href='https://github.com/prewcio/easyRPGEditor'>Prewcio</a> 🎮</footer>
     </div>
   );
 }
