@@ -5,9 +5,63 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(54, 54, 54);
+  color:white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0,0,25,0.4);
+  padding: 10px;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 20px;
+  text-align: center;
+}
+.eleme {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.p-btn {
+  cursor: pointer;
+  font-weight: 600;
+  color: orange;
+  transition: .5s color;
+}
+.p-btn:is(:focus,:hover){
+  color: greenyellow;
+}
+.charEle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.charEle input, .charEle textarea {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 5px;
+  font-size: 20px;
+  transition: .3s border;
+  color: white;
+}
+.charEle textarea {
+  width: 120%;
+  transform: translateX(-22.5px);
+  font-size: 14px;
+}
+.charEle input:is(:hover,:focus) {
+  border: 1px solid rgba(255,255,255,0.9);
+}
+.charEle label {
+  line-height: 5px;
+}
+.handicap, .handicap input {
+  width: 70%;
 }
