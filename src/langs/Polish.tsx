@@ -25,6 +25,7 @@ export default function Polish() {
       desc: ''
     });
   
+    
     const [hc, setHc] = useState(false);
     const [edit, setEdit] = useState(false);
     const [tillNext, setTillNext] = useState("");
@@ -67,13 +68,14 @@ export default function Polish() {
       URL.revokeObjectURL(url);
     };
   
+    const defaultExp = 300;
     const calculateTillNext = (exp: number): string => {
       let level = 0;
-      let requiredExp = 300;
+      let requiredExp = defaultExp;
       while (exp >= requiredExp) {
         level++;
         exp -= requiredExp;
-        requiredExp = 300 + level * 30; // 10% of 300 is 30
+        requiredExp = defaultExp + (level * (defaultExp*0.1)); // 10% of 300 is 30
       }
       let expTillNext;
       if (exp < requiredExp) {
@@ -84,11 +86,11 @@ export default function Polish() {
   
     const calculateLevel = (exp: number): number => {
       let level = 0;
-      let requiredExp = 300;
+      let requiredExp = defaultExp;
       while (exp >= requiredExp) {
         level++;
         exp -= requiredExp;
-        requiredExp = 300 + level * 30; // 10% of 300 is 30
+        requiredExp = defaultExp + (level * (defaultExp*0.1)); // 10% of 300 is 30
       }
       return level;
     };
